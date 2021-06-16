@@ -1,0 +1,544 @@
+define(['dart_sdk', 'packages/chat/screens/messages/components/text_message.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/chat/models/ChatMessage.dart', 'packages/chat/screens/messages/components/audio_message.dart', 'packages/chat/screens/messages/components/video_message.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/material/circle_avatar.dart', 'packages/flutter/src/painting/image_resolution.dart', 'packages/chat/constants.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart'], (function load__packages__chat__screens__messages__components__message_dart(dart_sdk, packages__chat__screens__messages__components__text_message$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__chat__models__ChatMessage$46dart, packages__chat__screens__messages__components__audio_message$46dart, packages__chat__screens__messages__components__video_message$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__material__circle_avatar$46dart, packages__flutter__src__painting__image_resolution$46dart, packages__chat__constants$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const text_message = packages__chat__screens__messages__components__text_message$46dart.screens__messages__components__text_message;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const ChatMessage = packages__chat__models__ChatMessage$46dart.models__ChatMessage;
+  const audio_message = packages__chat__screens__messages__components__audio_message$46dart.screens__messages__components__audio_message;
+  const video_message = packages__chat__screens__messages__components__video_message$46dart.screens__messages__components__video_message;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const circle_avatar = packages__flutter__src__material__circle_avatar$46dart.src__material__circle_avatar;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  const constants = packages__chat__constants$46dart.constants;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  var message$ = Object.create(dart.library);
+  var $addAll = dartx.addAll;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    ChatMessageToWidget: () => (T.ChatMessageToWidget = dart.constFn(dart.fnType(framework.Widget, [ChatMessage.ChatMessage])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    MessageStatusToColor: () => (T.MessageStatusToColor = dart.constFn(dart.fnType(ui.Color, [ChatMessage.MessageStatus])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "message",
+        [_Location_column]: 30,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ChatMessage.ChatMessageType.prototype,
+        [_name]: "ChatMessageType.text",
+        index: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "message",
+        [_Location_column]: 31,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6], widget_inspector._Location);
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ChatMessage.ChatMessageType.prototype,
+        [_name]: "ChatMessageType.audio",
+        index: 1
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ChatMessage.ChatMessageType.prototype,
+        [_name]: "ChatMessageType.video",
+        index: 3
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 20,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "radius",
+        [_Location_column]: 15,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundImage",
+        [_Location_column]: 15,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 22,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "status",
+        [_Location_column]: 50,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 9,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: ChatMessage.MessageStatus.prototype,
+        [_name]: "MessageStatus.not_sent",
+        index: 0
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: ChatMessage.MessageStatus.prototype,
+        [_name]: "MessageStatus.not_view",
+        index: 1
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: ChatMessage.MessageStatus.prototype,
+        [_name]: "MessageStatus.viewed",
+        index: 2
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 42,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 9,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 9,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38], widget_inspector._Location);
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 80,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 7,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 7,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41, C[42] || CT.C42, C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/sai/OneDrive/Desktop/messaging_app/lib/screens/messages/components/message.dart"
+      });
+    }
+  }, false);
+  var C = Array(46).fill(void 0);
+  var I = ["package:chat/screens/messages/components/message.dart"];
+  var message$0 = dart.privateName(message$, "Message.message");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _name = dart.privateName(ChatMessage, "_name");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  message$.Message = class Message extends framework.StatelessWidget {
+    get message() {
+      return this[message$0];
+    }
+    set message(value) {
+      super.message = value;
+    }
+    build(context) {
+      function messageContaint(message) {
+        switch (message.messageType) {
+          case C[3] || CT.C3:
+          {
+            return new text_message.TextMessage.new({message: message, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+          }
+          case C[7] || CT.C7:
+          {
+            return new audio_message.AudioMessage.new({message: message, $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+          }
+          case C[10] || CT.C10:
+          {
+            return new video_message.VideoMessage.new({$creationLocationd_0dea112b090073317d4: C[8] || CT.C8});
+          }
+          default:
+          {
+            return new basic.SizedBox.new({$creationLocationd_0dea112b090073317d4: C[11] || CT.C11});
+          }
+        }
+      }
+      dart.fn(messageContaint, T.ChatMessageToWidget());
+      return new basic.Padding.new({padding: C[12] || CT.C12, child: new basic.Row.new({mainAxisAlignment: this.message.isSender ? flex.MainAxisAlignment.end : flex.MainAxisAlignment.start, children: (() => {
+            let t0 = T.JSArrayOfWidget().of([]);
+            if (!this.message.isSender) t0[$addAll](T.JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({radius: 12.0, backgroundImage: new image_resolution.AssetImage.new("assets/images/user_2.png"), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), new basic.SizedBox.new({width: 20 / 2, $creationLocationd_0dea112b090073317d4: C[17] || CT.C17})]));
+            t0[$add](messageContaint(this.message));
+            if (this.message.isSender) t0[$add](new message$.MessageStatusDot.new({status: this.message.messageStatus, $creationLocationd_0dea112b090073317d4: C[20] || CT.C20}));
+            return t0;
+          })(), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27});
+    }
+  };
+  (message$.Message.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let message = opts && 'message' in opts ? opts.message : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[message$0] = message;
+    message$.Message.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = message$.Message.prototype;
+  dart.addTypeTests(message$.Message);
+  dart.addTypeCaches(message$.Message);
+  dart.setMethodSignature(message$.Message, () => ({
+    __proto__: dart.getMethods(message$.Message.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(message$.Message, I[0]);
+  dart.setFieldSignature(message$.Message, () => ({
+    __proto__: dart.getFields(message$.Message.__proto__),
+    message: dart.finalFieldType(ChatMessage.ChatMessage)
+  }));
+  var status$ = dart.privateName(message$, "MessageStatusDot.status");
+  message$.MessageStatusDot = class MessageStatusDot extends framework.StatelessWidget {
+    get status() {
+      return this[status$];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    build(context) {
+      function dotColor(status) {
+        switch (status) {
+          case C[31] || CT.C31:
+          {
+            return constants.kErrorColor;
+          }
+          case C[32] || CT.C32:
+          {
+            return dart.nullCheck(dart.nullCheck(theme.Theme.of(context).textTheme.bodyText1).color).withOpacity(0.1);
+          }
+          case C[33] || CT.C33:
+          {
+            return constants.kPrimaryColor;
+          }
+          default:
+          {
+            return colors.Colors.transparent;
+          }
+        }
+      }
+      dart.fn(dotColor, T.MessageStatusToColor());
+      return new container.Container.new({margin: new edge_insets.EdgeInsets.only({left: 20 / 2}), height: 12.0, width: 12.0, decoration: new box_decoration.BoxDecoration.new({color: dotColor(dart.nullCheck(this.status)), shape: box_border.BoxShape.circle}), child: new icon.Icon.new(this.status === ChatMessage.MessageStatus.not_sent ? icons.Icons.close : icons.Icons.done, {size: 8.0, color: theme.Theme.of(context).scaffoldBackgroundColor, $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), $creationLocationd_0dea112b090073317d4: C[39] || CT.C39});
+    }
+  };
+  (message$.MessageStatusDot.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let status = opts && 'status' in opts ? opts.status : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[status$] = status;
+    message$.MessageStatusDot.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = message$.MessageStatusDot.prototype;
+  dart.addTypeTests(message$.MessageStatusDot);
+  dart.addTypeCaches(message$.MessageStatusDot);
+  dart.setMethodSignature(message$.MessageStatusDot, () => ({
+    __proto__: dart.getMethods(message$.MessageStatusDot.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(message$.MessageStatusDot, I[0]);
+  dart.setFieldSignature(message$.MessageStatusDot, () => ({
+    __proto__: dart.getFields(message$.MessageStatusDot.__proto__),
+    status: dart.finalFieldType(dart.nullable(ChatMessage.MessageStatus))
+  }));
+  dart.trackLibraries("packages/chat/screens/messages/components/message.dart", {
+    "package:chat/screens/messages/components/message.dart": message$
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["message.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAcoB;;;;;;UAGQ;AACxB,eAAO,gBAA4B;AACjC,gBAAQ,AAAQ,OAAD;;;AAEX,kBAAO,4CAAqB,OAAO;;;;AAEnC,kBAAO,8CAAsB,OAAO;;;;AAEpC,kBAAO;;;;AAEP,kBAAO;;;;;AAIb,YAAO,yDAEE,sCAED,AAAQ,wBAA6B,6BAAwB,wCACvD;;AACR,iBAAK,AAAQ,uBAAa,oCACxB,4CACU,uBACS,oCAAW,wFAE9B,+BAAgC,KAAE;AAEpC,oCAAe,CAAC;AAChB,gBAAI,AAAQ,uBAAU,oDAAyB,AAAQ;;;IAI/D;;;QAvCO;QACS;;;AACX,oDAAW,GAAG;;EAAC;;;;;;;;;;;;;;IAyCC;;;;;;UAIK;AACxB,eAAM,SAAuB;AAC3B,gBAAQ,MAAM;;;AAEV,kBAAO;;;;AAEP,kBAAmD,AAAE,gBAAT,AAAE,eAAjC,AAAY,AAAU,eAAnB,OAAO,0CAA0C;;;;AAEjE,kBAAO;;;;AAEP,kBAAc;;;;;AAIpB,YAAO,sCACc,uCAA2B,KAAE,aACxC,aACD,kBACK,6CACH,QAAQ,CAAO,eAAN,sBACA,qCAEX,kBACL,AAAO,gBAAiB,qCAAiB,oBAAc,yBACjD,YACO,AAAY,eAAT,OAAO;IAG7B;;;QA9B6B;QAAU;;;AAAW,6DAAW,GAAG;;EAAC","file":"../../../../../../../../../packages/chat/screens/messages/components/message.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__messages__components__message: message$
+  };
+}));
+
+//# sourceMappingURL=message.dart.lib.js.map
